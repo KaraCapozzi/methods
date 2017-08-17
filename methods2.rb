@@ -10,30 +10,33 @@
 
 def movie_preferences(doc, com, drama)
 
-comedy_movie = "Superbad"
-drama_movie = "Lion"
-documentary_movie = "Saving Superman"
-dramedy_movie = "Something"
+  comedy_movie = "Superbad"
+  drama_movie = "Lion"
+  documentary_movie = "Saving Superman"
+  dramedy_movie = "Something"
 
 
-if doc >= 4 && com <= 4 && drama <=4
-  puts "I recommend #{documentary_movie}."
-elsif doc <= 3 && com >= 4 && drama >= 4
-  puts "I recommend #{dramedy_movie}."
-elsif drama >= 4 && com <= 4 && doc <= 4
-  puts "I recommend #{drama_movie}."
-elsif comedies >= 4 && drama <= 4 && doc <= 4
-  puts "I recommend #{comedy_movie}."
-else
-  puts "I recommend reading a good book!"
-end
+  if doc >= 4 && com <= 4 && drama <=4
+    puts "I recommend #{documentary_movie}."
+  elsif doc <= 3 && com >= 4 && drama >= 4
+    puts "I recommend #{dramedy_movie}."
+  elsif drama >= 4 && com <= 4 && doc <= 4
+    puts "I recommend #{drama_movie}."
+  elsif com >= 4 && drama <= 4 && doc <= 4
+    puts "I recommend #{comedy_movie}."
+  else
+    puts "I recommend reading a good book!"
+  end
 end
 
 puts "On a scale of 1 to 5, how much do you like documentaries?"
-doc = gets.chomp
+doc = gets.to_i
 puts "On a scale of 1 to 5, how much do you like dramas?"
-drama = gets.chomp
+drama = gets.to_i
 puts "On a scale of 1 to 5, how much do you like comedies?"
-com = gets.chomp
+com = gets.to_i
 
-return  movie_preferences(doc, com, drama)
+movie_preferences(doc, com, drama)
+
+movie_preferences(2, 1, 3)
+
